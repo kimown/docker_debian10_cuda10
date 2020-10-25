@@ -10,7 +10,7 @@ md5sum *.run
 
 docker build -t docker_debian10_cuda10:latest .
 
-docker run --gpus all -ti --rm debian10_cuda10 /usr/local/cuda-10.0/samples/bin/x86_64/linux/release/deviceQuery
+docker run --gpus all -ti --rm docker_debian10_cuda10 /usr/local/cuda-10.0/samples/bin/x86_64/linux/release/deviceQuery
 /usr/local/cuda-10.0/samples/bin/x86_64/linux/release/deviceQuery Starting...
 
  CUDA Device Query (Runtime API) version (CUDART static linking)
