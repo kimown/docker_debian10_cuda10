@@ -1,4 +1,4 @@
-# env
+# host
 
 ```
 nvidia-smi 
