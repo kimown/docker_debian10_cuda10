@@ -1,6 +1,8 @@
 FROM debian:10
 
-
+# https://github.com/NVIDIA/nvidia-container-runtime/blob/master/README.md
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES all
 
 ADD build.sh /opt/tiger/mdk/
 ADD NVIDIA-Linux-x86_64-418.116.00.run /opt/tiger/mdk/
