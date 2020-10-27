@@ -15,7 +15,7 @@ deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
 deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
 EOT
 
-apt-get update && apt-get -y install build-essential vim wget git kmod
+apt-get update && apt-get -y install build-essential vim wget git kmod libxml2-dev
 
 cd /opt/tiger/mdk/
 chmod +x NVIDIA-Linux-x86_64-418.116.00.run
@@ -25,16 +25,16 @@ sh NVIDIA-Linux-x86_64-418.116.00.run -s --no-kernel-module
 #./cuda_10.0.130_410.48_linux.run --no-opengl-libs  --verbose --toolkit --samples --silent --override
 
 chmod +x cuda_10.1.243_418.87.00_linux.run
-./cuda_10.1.243_418.87.00_linux.run --no-opengl-libs  --verbose --toolkit --samples --silent --override
+./cuda_10.1.243_418.87.00_linux.run --no-opengl-libs --toolkit --samples --silent --override
 
 
-echo "export PATH=/usr/local/cuda-10.0/bin:\$PATH" >>~/.bashrc
-echo "export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:\$LD_LIBRARY_PATH" >>~/.bashrc
+echo "export PATH=/usr/local/cuda-10.1/bin:\$PATH" >>~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:\$LD_LIBRARY_PATH" >>~/.bashrc
 source ~/.bashrc
 
 nvcc  --version
 
-cd /usr/local/cuda-10.0/samples/1_Utilities/deviceQuery
+cd /usr/local/cuda-10.1/samples/1_Utilities/deviceQuery
 make
 ls 
 #../../bin/x86_64/linux/release/deviceQuery
