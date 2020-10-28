@@ -35,9 +35,13 @@ source ~/.bashrc
 nvcc  --version
 
 cd /usr/local/cuda-10.1/samples/1_Utilities/deviceQuery
-make
+make -j$(nproc)
 ls 
-#../../bin/x86_64/linux/release/deviceQuery
+../../bin/x86_64/linux/release/deviceQuery
+
+cd /usr/local/cuda-10.1/samples
+make -j$(nproc)
+
 
 
 #docker build -t debian10_cuda10:latest .
